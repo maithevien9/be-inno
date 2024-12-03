@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "evaluations",
+  "info": {
+    "singularName": "evaluation",
+    "pluralName": "evaluations",
+    "displayName": "Evaluation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Period": {
+      "type": "string",
+      "required": true
+    },
+    "EvaStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Complete Success Metrics",
+        "Self Evaluation",
+        "PM/SM/Lead Evaluation",
+        "EM Evaluation",
+        "Final Review",
+        "Done"
+      ],
+      "required": true
+    }
+  }
+}
