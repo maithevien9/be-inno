@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "evaluations",
+  "collectionName": "tests",
   "info": {
-    "singularName": "evaluation",
-    "pluralName": "evaluations",
-    "displayName": "Evaluation",
+    "singularName": "test",
+    "pluralName": "tests",
+    "displayName": "Matrics",
     "description": ""
   },
   "options": {
@@ -16,17 +16,13 @@
       "type": "string",
       "required": true
     },
-    "EvaStatus": {
+    "MatricStatus": {
       "type": "enumeration",
       "enum": [
         "Draft",
-        "In Progress ",
-        "Submitted For PM Review",
-        "Submitted For EM Review",
-        "Finalized",
+        "In Progress",
         "Done"
-      ],
-      "required": true
+      ]
     }
   }
 }

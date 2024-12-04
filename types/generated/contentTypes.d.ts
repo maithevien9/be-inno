@@ -386,11 +386,11 @@ export interface ApiEvaluationEvaluation extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     EvaStatus: Schema.Attribute.Enumeration<
       [
-        'Complete Success Metrics',
-        'Self Evaluation',
-        'PM/SM/Lead Evaluation',
-        'EM Evaluation',
-        'Final Review',
+        'Draft',
+        'In Progress ',
+        'Submitted For PM Review',
+        'Submitted For EM Review',
+        'Finalized',
         'Done',
       ]
     > &
@@ -401,6 +401,35 @@ export interface ApiEvaluationEvaluation extends Struct.CollectionTypeSchema {
       'api::evaluation.evaluation'
     > &
       Schema.Attribute.Private;
+    Period: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTestTest extends Struct.CollectionTypeSchema {
+  collectionName: 'tests';
+  info: {
+    description: '';
+    displayName: 'Matrics';
+    pluralName: 'tests';
+    singularName: 'test';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::test.test'> &
+      Schema.Attribute.Private;
+    MatricStatus: Schema.Attribute.Enumeration<
+      ['Draft', 'In Progress', 'Done']
+    >;
     Period: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -919,13 +948,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::evaluation.evaluation': ApiEvaluationEvaluation;
+      'api::test.test': ApiTestTest;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
       'plugin::upload.file': PluginUploadFile;
-      'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
