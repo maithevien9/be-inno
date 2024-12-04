@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "tests",
+  "collectionName": "success_matrics",
   "info": {
-    "singularName": "test",
-    "pluralName": "tests",
-    "displayName": "Matrics",
-    "description": ""
+    "singularName": "success-matric",
+    "pluralName": "success-matrics",
+    "displayName": "SuccessMatric"
   },
   "options": {
     "draftAndPublish": true

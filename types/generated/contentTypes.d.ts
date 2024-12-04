@@ -409,13 +409,13 @@ export interface ApiEvaluationEvaluation extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiTestTest extends Struct.CollectionTypeSchema {
-  collectionName: 'tests';
+export interface ApiSuccessMatricSuccessMatric
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'success_matrics';
   info: {
-    description: '';
-    displayName: 'Matrics';
-    pluralName: 'tests';
-    singularName: 'test';
+    displayName: 'SuccessMatric';
+    pluralName: 'success-matrics';
+    singularName: 'success-matric';
   };
   options: {
     draftAndPublish: true;
@@ -425,7 +425,10 @@ export interface ApiTestTest extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::test.test'> &
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::success-matric.success-matric'
+    > &
       Schema.Attribute.Private;
     MatricStatus: Schema.Attribute.Enumeration<
       ['Draft', 'In Progress', 'Done']
@@ -948,13 +951,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::evaluation.evaluation': ApiEvaluationEvaluation;
-      'api::test.test': ApiTestTest;
+      'api::success-matric.success-matric': ApiSuccessMatricSuccessMatric;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
       'plugin::upload.file': PluginUploadFile;
+      'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;

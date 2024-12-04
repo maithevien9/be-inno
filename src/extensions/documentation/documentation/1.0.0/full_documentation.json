@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-04T06:44:03.256Z"
+    "x-generation-date": "2024-12-04T06:49:10.602Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -294,7 +294,7 @@
         "operationId": "get/evaluations/{id}"
       }
     },
-    "/tests": {
+    "/success-matrics": {
       "get": {
         "responses": {
           "200": {
@@ -302,7 +302,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TestListResponse"
+                  "$ref": "#/components/schemas/SuccessMatricListResponse"
                 }
               }
             }
@@ -359,7 +359,7 @@
           }
         },
         "tags": [
-          "Test"
+          "Success-matric"
         ],
         "parameters": [
           {
@@ -465,7 +465,7 @@
             }
           }
         ],
-        "operationId": "get/tests"
+        "operationId": "get/success-matrics"
       },
       "post": {
         "responses": {
@@ -474,7 +474,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TestResponse"
+                  "$ref": "#/components/schemas/SuccessMatricResponse"
                 }
               }
             }
@@ -531,23 +531,23 @@
           }
         },
         "tags": [
-          "Test"
+          "Success-matric"
         ],
         "parameters": [],
-        "operationId": "post/tests",
+        "operationId": "post/success-matrics",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TestRequest"
+                "$ref": "#/components/schemas/SuccessMatricRequest"
               }
             }
           }
         }
       }
     },
-    "/tests/{id}": {
+    "/success-matrics/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -555,7 +555,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TestResponse"
+                  "$ref": "#/components/schemas/SuccessMatricResponse"
                 }
               }
             }
@@ -612,7 +612,7 @@
           }
         },
         "tags": [
-          "Test"
+          "Success-matric"
         ],
         "parameters": [
           {
@@ -626,7 +626,7 @@
             }
           }
         ],
-        "operationId": "get/tests/{id}"
+        "operationId": "get/success-matrics/{id}"
       },
       "put": {
         "responses": {
@@ -635,7 +635,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TestResponse"
+                  "$ref": "#/components/schemas/SuccessMatricResponse"
                 }
               }
             }
@@ -692,7 +692,7 @@
           }
         },
         "tags": [
-          "Test"
+          "Success-matric"
         ],
         "parameters": [
           {
@@ -706,13 +706,13 @@
             }
           }
         ],
-        "operationId": "put/tests/{id}",
+        "operationId": "put/success-matrics/{id}",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TestRequest"
+                "$ref": "#/components/schemas/SuccessMatricRequest"
               }
             }
           }
@@ -783,7 +783,7 @@
           }
         },
         "tags": [
-          "Test"
+          "Success-matric"
         ],
         "parameters": [
           {
@@ -797,7 +797,7 @@
             }
           }
         ],
-        "operationId": "delete/tests/{id}"
+        "operationId": "delete/success-matrics/{id}"
       }
     },
     "/upload": {
@@ -2695,7 +2695,7 @@
           }
         }
       },
-      "TestRequest": {
+      "SuccessMatricRequest": {
         "type": "object",
         "required": [
           "data"
@@ -2739,13 +2739,13 @@
           }
         }
       },
-      "TestListResponse": {
+      "SuccessMatricListResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Test"
+              "$ref": "#/components/schemas/SuccessMatric"
             }
           },
           "meta": {
@@ -2774,7 +2774,7 @@
           }
         }
       },
-      "Test": {
+      "SuccessMatric": {
         "type": "object",
         "required": [
           "Period"
@@ -3164,11 +3164,11 @@
           }
         }
       },
-      "TestResponse": {
+      "SuccessMatricResponse": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/Test"
+            "$ref": "#/components/schemas/SuccessMatric"
           },
           "meta": {
             "type": "object"
