@@ -387,7 +387,7 @@ export interface ApiEvaluationEvaluation extends Struct.CollectionTypeSchema {
     EvaStatus: Schema.Attribute.Enumeration<
       [
         'Draft',
-        'In Progress ',
+        'In Progress',
         'Submitted For PM Review',
         'Submitted For EM Review',
         'Finalized',

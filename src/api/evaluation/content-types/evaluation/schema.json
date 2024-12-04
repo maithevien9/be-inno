@@ -20,7 +20,7 @@
       "type": "enumeration",
       "enum": [
         "Draft",
-        "In Progress ",
+        "In Progress",
         "Submitted For PM Review",
         "Submitted For EM Review",
         "Finalized",
